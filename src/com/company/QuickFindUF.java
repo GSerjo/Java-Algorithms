@@ -19,14 +19,14 @@ public class QuickFindUF {
         return find(p) == find(q);
     }
 
+    private int find(int p)
+    {
+        return id[p];
+    }
+
     public int count()
     {
         return count;
-    }
-
-    public int find(int p)
-    {
-        return id[p];
     }
 
     public void union(int p, int q)
