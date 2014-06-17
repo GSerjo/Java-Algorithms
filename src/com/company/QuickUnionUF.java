@@ -1,7 +1,6 @@
 package com.company;
 
-public class QuickUnionUF
-{
+public class QuickUnionUF implements IUnionFind {
     private int[] id;
     private int  count;
     public QuickUnionUF(int count)

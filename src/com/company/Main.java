@@ -5,20 +5,26 @@ public class Main {
     public static void main(String[] args)
     {
         int count = StdIn.readInt();
-        QuickFindUF uf = new QuickFindUF(count);
+        IUnionFind unionFind = createUnionFind(count);
 
         while(!StdIn.isEmpty())
         {
             int p = StdIn.readInt();
             int q = StdIn.readInt();
-            if(uf.connected(p, q))
+            if(unionFind.connected(p, q))
             {
                 continue;
             }
-            uf.union(p, q);
+            unionFind.union(p, q);
             StdOut.println(p + " " + q);
         }
 
-        StdOut.println(uf.count() + " " + "components");
+        StdOut.println(unionFind.count() + " " + "components");
+    }
+
+    private static IUnionFind createUnionFind(int count)
+    {
+        //return new QuickFindUF(count);
+        return new QuickUnionUF(count);
     }
 }
