@@ -24,7 +24,8 @@ public class Main {
 
     private static IUnionFind createUnionFind(int count)
     {
-        //return new QuickFindUF(count);
+//        return new QuickFindUF(count);
+//        return new WeightQuickUnionUF(count);
         return new QuickUnionUF(count);
     }
 }
