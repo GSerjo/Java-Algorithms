@@ -3,6 +3,12 @@ package com.company.DataStructures;
 public class StackOfStrings
 {
     private  Node root;
+    private int count;
+
+    public int size()
+    {
+        return count;
+    }
 
     public boolean isEmpty()
     {
@@ -11,16 +17,18 @@ public class StackOfStrings
 
     public void Push(String value)
     {
-        Node previous = root;
+        Node old = root;
         root = new Node();
         root.value = value;
-        root.next = previous;
+        root.next = old;
+        count++;
     }
 
     public String Pop()
     {
         String result = root.value;
         root = root.next;
+        count--;
         return result;
     }
 

@@ -10,5 +10,6 @@ public class StackOfStringsTest
     {
         StackOfStrings stack = new StackOfStrings();
         assertTrue(stack.isEmpty());
+        assertEquals(0, stack.size());
     }
 }
