@@ -2,7 +2,7 @@ package com.company.DataStructures;
 
 import java.util.Iterator;
 
-public class Deque<Item> implements Iterable<Item>
+public class Deque<Item> implements Iterable
 {
     private Node first, last;
     private int count;
@@ -106,7 +106,7 @@ public class Deque<Item> implements Iterable<Item>
         return result;
     }
 
-    public java.util.Iterator<Item> iterator()
+    public java.util.Iterator iterator()
     {
         return new DequeIterator();
     }
