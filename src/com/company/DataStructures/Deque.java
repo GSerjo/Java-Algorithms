@@ -1,11 +1,9 @@
 package com.company.DataStructures;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
-public class Deque<Item>
+public class Deque<Item> implements Iterable<Item>
 {
-
     private Node first, last;
     private int count;
 
@@ -21,7 +19,7 @@ public class Deque<Item>
         return count;
     }
 
-    private boolean isEmpty()
+    public boolean isEmpty()
     {
         return first == null && last == null;
     }
@@ -36,7 +34,7 @@ public class Deque<Item>
         first = new Node();
         first.value = item;
         first.next = old;
-        if(isEmpty())
+        if(last == null)
         {
             last = first;
         }
@@ -115,6 +113,7 @@ public class Deque<Item>
 
     private class DequeIterator implements Iterator<Item>
     {
+        private Node current = first;
 
         public void remove()
         {
@@ -123,12 +122,18 @@ public class Deque<Item>
 
         public boolean hasNext()
         {
-            return false;
+            return current != null;
         }
 
         public Item next()
         {
-            return null;
+            if(!hasNext())
+            {
+                throw new java.util.NoSuchElementException();
+            }
+            Item result = current.value;
+            current = current.next;
+            return result;
         }
     }
 }

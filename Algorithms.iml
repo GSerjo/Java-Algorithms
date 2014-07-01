@@ -9,15 +9,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" scope="TEST">
-      <library name="junit-4.11">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/junit-4.11.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="junit-4.111" level="project" />
+    <orderEntry type="library" name="hamcrest-core-1.31" level="project" />
   </component>
 </module>
 
