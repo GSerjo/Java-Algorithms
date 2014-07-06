@@ -13,6 +13,15 @@ public class Selection {
         }
     }
 
+    public static boolean isSorted(Comparable[] list){
+        for (int i = 1; i < list.length; i++) {
+            if(less(list[i], list[i - 1])){
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static void exchange(Comparable[] list, int i, int j){
         Comparable dummy = list[i];
         list[i] = list[j];
