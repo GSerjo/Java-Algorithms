@@ -4,7 +4,7 @@ import com.company.StdRandom;
 
 import java.util.Iterator;
 
-public class RandomizedQueue<Item> implements Iterable
+public class RandomizedQueue<Item> implements Iterable<Item>
 {
 
     private Item[] data;
