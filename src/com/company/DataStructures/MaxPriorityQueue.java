@@ -31,12 +31,12 @@ public final class MaxPriorityQueue<Key extends Comparable<Key>> {
     }
 
     private void sink(int k){
-        while (2*k <= count){
+        while(2*k <= count){
             int i = 2*k;
-            if(less(i, i+1)){
+            if(i < count && less(i, i+1)){
                 i++;
             }
-            if(less(i, k)){
+            if(!less(k, i)){
                 break;
             }
             exchange(k, i);
