@@ -4,7 +4,7 @@ public class HeapSort
 {
     public static void sort(Comparable[] list){
         int count = list.length;
-        for(int i = count/2; i > 0; i-- ){
+        for(int i = count/2; i >= 1; i-- ){
             sink(i, count,  list);
         }
         while(count > 1){
@@ -13,8 +13,17 @@ public class HeapSort
         }
     }
 
+    public static boolean isSorted(Comparable[] list){
+        for (int i = 1; i < list.length; i++) {
+            if(less(i, i - 1, list)){
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static void sink(int k, int count, Comparable[] list){
-        while(2*k <= count){
+        while(2*k <= count - 1){
             int i = 2*k;
             if(i < count && less(i, i + 1, list)){
                 i++;
