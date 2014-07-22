@@ -15,11 +15,11 @@ public class HeapSortTest {
     }
 
     private Comparable[] createData(int length){
-        Comparable[] result = new Integer[length];
-        for (int i = 0; i < length; i++) {
-            result[i] = StdRandom.uniform(10);
+Comparable[] result = new Integer[length];
+for (int i = 0; i < length; i++) {
+        result[i] = StdRandom.uniform(10);
         }
         return result;
-    }
+        }
 
-}
+        }
